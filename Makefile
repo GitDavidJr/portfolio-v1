@@ -43,19 +43,19 @@ pull:
 # Start containers
 up:
 	@echo "$(GREEN)Starting containers...$(NC)"
-	docker compose up -d
+	docker-compose up -d
 
 # Stop containers
 down:
 	@echo "$(GREEN)Stopping containers...$(NC)"
-	docker compose down
+	docker-compose down
 
 # Restart containers
 restart: down up
 
 # View logs
 logs:
-	docker compose logs -f
+	docker-compose logs -f
 
 # Remove dangling images
 clean:
