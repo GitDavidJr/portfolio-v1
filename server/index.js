@@ -87,7 +87,7 @@ app.get("/api/health", (req, res) => {
 
 // Catch-all handler: serve React app for any non-API routes (in production)
 if (process.env.NODE_ENV === "production") {
-  app.get("*", (req, res) => {
+  app.get("/{*path}", (req, res) => {
     res.sendFile(path.join(__dirname, "../dist/index.html"));
   });
 }
