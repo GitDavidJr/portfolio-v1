@@ -1,0 +1,41 @@
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Build output (will be built in Docker)
+dist
+
+# Development files
+.git
+.gitignore
+.github
+*.md
+.vscode
+.idea
+
+# Environment files (will be copied separately)
+.env
+.env.local
+.env.*.local
+
+# Test files
+coverage
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__
+
+# Docker files (not needed inside the image)
+Dockerfile
+docker-compose*.yml
+.dockerignore
+Makefile
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp

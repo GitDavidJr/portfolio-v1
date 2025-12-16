@@ -1,0 +1,56 @@
+name: CI/CD Portfolio Deploy
+
+on:
+  push:
+    branches:
+      - prod
+
+env:
+  IMAGE_NAME: davidjrdocker/portfolio-app
+  TAG: latest
+  DOCKER_REGISTRY: docker.io
+
+jobs:
+  ci-and-deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: 1. Checkout do Código
+        uses: actions/checkout@v4
+
+      # --- FASE 1: Integração Contínua (CI) no GitHub Runner ---
+
+      - name: 2. Configurar Buildx (Motor Docker)
+        uses: docker/setup-buildx-action@v3
+
+      - name: 3. Login no Docker Hub
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: 4. Executar 'make push' (Build e Push)
+        run: make push
+
+      # --- FASE 2: Entrega Contínua (CD) na VPS via SSH ---
+
+      - name: 5. Deploy na VPS via SSH
+        uses: appleboy/ssh-action@v1.0.1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "--- INICIANDO DEPLOY NA VPS ---"
+
+            # 1. Acessar o diretório do projeto na VPS
+            cd portfolio-v1
+            git pull
+
+            # 2. Executar o 'make deploy'
+            echo "Executando 'make deploy'..."
+            /usr/bin/make deploy
+
+            echo "--- DEPLOY CONCLUÍDO ---"
