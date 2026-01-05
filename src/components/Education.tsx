@@ -1,13 +1,8 @@
 import { GraduationCap, Award, Calendar } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function Education() {
-  const education = {
-    degree: 'Bacharelado em Sistemas de Informação',
-    institution: 'Instituto Federal de Educação, Ciência e Tecnologia do Estado da Bahia',
-    period: '2023 - 2026 (Previsão)',
-    currentSemester: '7º Semestre',
-    description: 'Formação focada em desenvolvimento de software, arquitetura de sistemas, banco de dados e gestão de projetos de tecnologia.',
-  };
+  const { t } = useTranslation();
 
   const certifications = [
     {
@@ -36,7 +31,7 @@ export function Education() {
     <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="mb-4 text-white">Educação & Certificações</h2>
+          <h2 className="mb-4 text-white">{t('education.title')}</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto"></div>
         </div>
 
@@ -48,23 +43,23 @@ export function Education() {
                 <GraduationCap className="w-8 h-8" />
               </div>
               <div>
-                <h3 className="text-blue-400">Formação Acadêmica</h3>
+                <h3 className="text-blue-400">{t('education.academicTitle')}</h3>
               </div>
             </div>
 
-            <h3 className="mb-2 text-white">{education.degree}</h3>
-            <p className="text-slate-300 mb-2">{education.institution}</p>
-            
+            <h3 className="mb-2 text-white">{t('education.degree')}</h3>
+            <p className="text-slate-300 mb-2">{t('education.institution')}</p>
+
             <div className="flex items-center gap-2 text-slate-400 mb-4">
               <Calendar size={16} />
-              <span>{education.period}</span>
+              <span>{t('education.period')}</span>
             </div>
 
             <div className="inline-block px-4 py-2 bg-green-500/10 text-green-400 rounded-full border border-green-500/20 mb-4">
-              {education.currentSemester}
+              {t('education.currentSemester')}
             </div>
 
-            <p className="text-slate-400">{education.description}</p>
+            <p className="text-slate-400">{t('education.description')}</p>
           </div>
 
           {/* Certifications Card */}
@@ -74,7 +69,7 @@ export function Education() {
                 <Award className="w-8 h-8" />
               </div>
               <div>
-                <h3 className="text-purple-400">Certificações</h3>
+                <h3 className="text-purple-400">{t('education.certificationsTitle')}</h3>
               </div>
             </div>
 

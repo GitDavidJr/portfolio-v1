@@ -1,21 +1,24 @@
 import { Code2, Rocket, Users } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function About() {
+  const { t } = useTranslation();
+
   const highlights = [
     {
       icon: <Code2 className="w-8 h-8" />,
-      title: 'Código Limpo',
-      description: 'Escrevo código limpo, testável e bem documentado seguindo as melhores práticas da indústria.',
+      title: t('about.highlights.cleanCode.title'),
+      description: t('about.highlights.cleanCode.description'),
     },
     {
       icon: <Rocket className="w-8 h-8" />,
-      title: 'Entrega Rápida',
-      description: 'Experiência em CI/CD e DevOps para garantir deploys confiáveis e automatizados.',
+      title: t('about.highlights.fastDelivery.title'),
+      description: t('about.highlights.fastDelivery.description'),
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: 'Trabalho em Equipe',
-      description: 'Colaborativo e comunicativo, sempre buscando compartilhar conhecimento com o time.',
+      title: t('about.highlights.teamwork.title'),
+      description: t('about.highlights.teamwork.description'),
     },
   ];
 
@@ -23,7 +26,7 @@ export function About() {
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="mb-4 text-white">Sobre Mim</h2>
+          <h2 className="mb-4 text-white">{t('about.title')}</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto"></div>
         </div>
 
@@ -39,18 +42,13 @@ export function About() {
 
           <div>
             <p className="text-slate-300 mb-6">
-              Sou um desenvolvedor full stack apaixonado por criar soluções inovadoras e escaláveis.
-              Atualmente cursando o 7º semestre de Sistemas de Informação, combino conhecimento
-              acadêmico com experiência prática no desenvolvimento de aplicações modernas.
+              {t('about.paragraph1')}
             </p>
             <p className="text-slate-300 mb-6">
-              Minha expertise abrange desde o backend robusto com Java e Node.js até interfaces
-              modernas com React e Next.js. Tenho forte experiência em DevOps, trabalhando com
-              Docker, Kubernetes, AWS e pipelines de CI/CD.
+              {t('about.paragraph2')}
             </p>
             <p className="text-slate-300">
-              Busco constantemente aprender novas tecnologias e aplicar as melhores práticas de
-              desenvolvimento para criar produtos que fazem a diferença.
+              {t('about.paragraph3')}
             </p>
           </div>
         </div>

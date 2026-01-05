@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Available for projects",
+    "greeting": "Hi, I'm",
+    "role": "Full Stack Developer",
+    "description": "Specialized in <highlight>Java</highlight> and <highlight>Node.js</highlight>, creating scalable and modern solutions. Experience in DevOps, microservices architecture, and full-stack web application development.",
+    "techStack": "Tech Stack:",
+    "viewProjects": "View Projects",
+    "scroll": "Scroll",
+    "stats": {
+      "years": "Year",
+      "projects": "Projects",
+      "technologies": "Technologies"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "paragraph1": "I'm a full stack developer passionate about creating innovative and scalable solutions. Currently in my 7th semester of Information Systems, I combine academic knowledge with hands-on experience in developing modern applications.",
+    "paragraph2": "My expertise ranges from robust backend development with Java and Node.js to modern interfaces with React and Next.js. I have strong experience in DevOps, working with Docker, Kubernetes, AWS, and CI/CD pipelines.",
+    "paragraph3": "I constantly seek to learn new technologies and apply best development practices to create products that make a difference.",
+    "highlights": {
+      "cleanCode": {
+        "title": "Clean Code",
+        "description": "I write clean, testable, and well-documented code following industry best practices."
+      },
+      "fastDelivery": {
+        "title": "Fast Delivery",
+        "description": "Experience in CI/CD and DevOps to ensure reliable and automated deployments."
+      },
+      "teamwork": {
+        "title": "Teamwork",
+        "description": "Collaborative and communicative, always seeking to share knowledge with the team."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "A diverse set of technologies and tools I use to create complete solutions",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "database": "Database",
+      "devops": "DevOps & Cloud",
+      "tools": "Tools",
+      "methodologies": "Methodologies"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Real projects I developed applying my technical skills",
+    "viewProject": "View Project",
+    "items": {
+      "pulsechat": {
+        "description": "CRM with chatbot and AI for WhatsApp. Includes message automation, AI integration, payment processing, and real-time conversation management."
+      },
+      "progest": {
+        "description": "Inventory management system for medications and hospital supplies at the Base Hospital of Vitória da Conquista."
+      },
+      "efaDoar": {
+        "description": "Online donation system for Escola Família Agrícola de Botuporã. Integrated with Cielo payment gateway."
+      },
+      "dashboard": {
+        "description": "Dashboard for visualizing internal financial data of a distributor. Integration with automations and custom design."
+      },
+      "landingPage": {
+        "description": "Responsive landing page template with email sending implementation and modern design."
+      },
+      "vitoriaBeatriz": {
+        "description": "Architecture portfolio in blog style for project display. Allows the architect to publish their work and clients to explore the catalog."
+      }
+    }
+  },
+  "education": {
+    "title": "Education & Certifications",
+    "academicTitle": "Academic Background",
+    "certificationsTitle": "Certifications",
+    "degree": "Bachelor's in Information Systems",
+    "institution": "Federal Institute of Education, Science and Technology of Bahia",
+    "period": "2023 - 2026 (Expected)",
+    "currentSemester": "7th Semester",
+    "description": "Education focused on software development, systems architecture, databases, and technology project management."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "I'm always open to new opportunities and collaborations. Let's talk!",
+    "info": "Contact Information",
+    "location": "Location",
+    "availability": "Availability",
+    "availabilityText": "Currently available for freelance projects and full-time job opportunities. I usually respond within 24 hours.",
+    "sendMessage": "Send a Message",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Your message...",
+      "submit": "Send Message",
+      "sending": "Sending..."
+    },
+    "status": {
+      "success": "Message sent successfully! I'll get back to you soon.",
+      "error": "Error sending message. Please try again.",
+      "connectionError": "Connection error. Check your internet and try again."
+    }
+  },
+  "footer": {
+    "madeWith": "Made with",
+    "by": "by David Júnior",
+    "rights": "All rights reserved"
+  },
+  "typewriter": {
+    "name": "David Júnior",
+    "role": "Full Stack"
+  }
+}

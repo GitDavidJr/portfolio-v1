@@ -1,8 +1,11 @@
 import { Github, Linkedin, Mail, ArrowRight, Code2, Braces } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useTranslation, Trans } from 'react-i18next';
 import { TypewriterCode } from './TypewriterCode';
 
 export function Hero() {
+  const { t } = useTranslation();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -35,12 +38,13 @@ export function Hero() {
             <div className="mb-6 flex items-center gap-3">
               <div className="flex items-center gap-2 px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span>Disponível para projetos</span>
+                <span>{t('hero.available')}</span>
               </div>
             </div>
 
             <h1 className="mb-6 text-white">
-              Olá, eu sou
+              {t('hero.greeting')}
+              <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400">
                 David Júnior
               </span>
@@ -48,18 +52,19 @@ export function Hero() {
 
             <div className="mb-6 flex items-center gap-3 text-slate-300">
               <Code2 className="text-blue-400" size={24} />
-              <span className="text-xl">Desenvolvedor Full Stack</span>
+              <span className="text-xl">{t('hero.role')}</span>
             </div>
 
             <p className="text-slate-400 mb-8 max-w-xl leading-relaxed">
-              Especializado em <span className="text-blue-400">Java</span> e <span className="text-blue-400">Node.js</span>,
-              criando soluções escaláveis e modernas. Experiência em DevOps, arquitetura de microserviços
-              e desenvolvimento de aplicações web completas.
+              <Trans
+                i18nKey="hero.description"
+                components={{ highlight: <span className="text-blue-400" /> }}
+              />
             </p>
 
             {/* Tech Stack Pills */}
             <div className="mb-8">
-              <p className="text-slate-500 mb-3">Tech Stack:</p>
+              <p className="text-slate-500 mb-3">{t('hero.techStack')}</p>
               <div className="flex flex-wrap gap-2">
                 {technologies.map((tech, index) => (
                   <motion.span
@@ -80,7 +85,7 @@ export function Hero() {
                 onClick={() => scrollToSection('projects')}
                 className="group px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-all shadow-lg hover:shadow-blue-500/50 flex items-center gap-2"
               >
-                Ver Projetos
+                {t('hero.viewProjects')}
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -146,16 +151,16 @@ export function Hero() {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 mt-6">
                   <div className="text-center p-3 bg-slate-950/50 rounded-lg border border-slate-800">
-                    <div className="text-blue-400 mb-1">1+</div>
-                    <div className="text-slate-500 text-xs">Ano</div>
+                    <div className="text-blue-400 mb-1">2+</div>
+                    <div className="text-slate-500 text-xs">{t('hero.stats.years')}</div>
                   </div>
                   <div className="text-center p-3 bg-slate-950/50 rounded-lg border border-slate-800">
                     <div className="text-cyan-400 mb-1">10+</div>
-                    <div className="text-slate-500 text-xs">Projetos</div>
+                    <div className="text-slate-500 text-xs">{t('hero.stats.projects')}</div>
                   </div>
                   <div className="text-center p-3 bg-slate-950/50 rounded-lg border border-slate-800">
                     <div className="text-purple-400 mb-1">20+</div>
-                    <div className="text-slate-500 text-xs">Tecnologias</div>
+                    <div className="text-slate-500 text-xs">{t('hero.stats.technologies')}</div>
                   </div>
                 </div>
               </div>
@@ -172,7 +177,7 @@ export function Hero() {
         transition={{ duration: 2, repeat: Infinity }}
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-xs">Scroll</span>
+          <span className="text-xs">{t('hero.scroll')}</span>
           <div className="w-6 h-10 border-2 border-slate-700 rounded-full flex items-start justify-center p-2">
             <motion.div
               className="w-1.5 h-1.5 bg-blue-400 rounded-full"

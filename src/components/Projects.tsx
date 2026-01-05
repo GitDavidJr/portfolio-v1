@@ -1,9 +1,10 @@
 import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface Project {
   title: string;
-  description: string;
+  descriptionKey: string;
   images: string[];
   tags: string[];
   demo: string | null;
@@ -80,45 +81,47 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
 }
 
 export function Projects() {
+  const { t } = useTranslation();
+
   const projects: Project[] = [
     {
       title: 'PulseChat',
-      description: 'CRM com chatbot e IA para WhatsApp. Inclui automação de mensagens, integração com IA, processamento de pagamentos e gestão de conversas em tempo real.',
+      descriptionKey: 'projects.items.pulsechat.description',
       images: ['/projetos/pulsechat/home.png', '/projetos/pulsechat/workflow.png'],
       tags: ['Next.js', 'Shadcn', 'Node.js', 'Fastify', 'MongoDB', 'OpenAI', 'Prisma', 'AWS', 'Stripe', 'WhatsApp'],
       demo: 'https://pulsechat-web.vercel.app',
     },
     {
       title: 'ProGest HGVC',
-      description: 'Sistema de gerenciamento de estoque para medicamentos e materiais hospitalares do Hospital de Base de Vitória da Conquista.',
+      descriptionKey: 'projects.items.progest.description',
       images: ['/projetos/hgvc.png'],
       tags: ['Vue.js', 'Vite', 'Laravel', 'Shadcn', 'JWT', 'MySQL'],
       demo: null,
     },
     {
       title: 'EFA Doar',
-      description: 'Sistema de doação online para a Escola Família Agrícola de Botuporã. Integrado com gateway de pagamento Cielo.',
+      descriptionKey: 'projects.items.efaDoar.description',
       images: ['/projetos/efa-doar.png'],
       tags: ['Next.js', 'MongoDB', 'Cielo'],
       demo: 'https://efa-botupora-doar.vercel.app',
     },
     {
       title: 'Dashboard Financeiro',
-      description: 'Dashboard para visualização de dados internos financeiros de uma distribuidora. Integração com automações e design personalizado.',
+      descriptionKey: 'projects.items.dashboard.description',
       images: ['/projetos/dashboard.png'],
       tags: ['Next.js', 'Supabase', 'PostgreSQL', 'n8n', 'Figma'],
       demo: null,
     },
     {
       title: 'Landing Page',
-      description: 'Modelo de landing page responsiva com implementação de envio de e-mail e design moderno.',
+      descriptionKey: 'projects.items.landingPage.description',
       images: ['/projetos/landingpage.png'],
       tags: ['Next.js', 'CSS Modules', 'Mixins', 'Email'],
       demo: 'https://landing-page-david.vercel.app',
     },
     {
       title: 'Vitória Beatriz',
-      description: 'Portfólio de arquitetura estilo blog para exibição de projetos. Permite que a arquiteta publique seus trabalhos e clientes explorem o catálogo.',
+      descriptionKey: 'projects.items.vitoriaBeatriz.description',
       images: ['/projetos/vitoriabeatriz.png'],
       tags: ['React', 'Vite', 'Supabase', 'PostgreSQL', 'Lovable'],
       demo: 'https://vitoriabeatriz.lovable.app/',
@@ -129,10 +132,10 @@ export function Projects() {
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="mb-4 text-white">Projetos em Destaque</h2>
+          <h2 className="mb-4 text-white">{t('projects.title')}</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto mb-4"></div>
           <p className="text-slate-400 max-w-2xl mx-auto">
-            Projetos reais que desenvolvi aplicando minhas habilidades técnicas
+            {t('projects.subtitle')}
           </p>
         </div>
 
@@ -149,7 +152,7 @@ export function Projects() {
 
               <div className="p-6">
                 <h3 className="mb-3 text-white">{project.title}</h3>
-                <p className="text-slate-400 mb-4">{project.description}</p>
+                <p className="text-slate-400 mb-4">{t(project.descriptionKey)}</p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.slice(0, 5).map((tag, tagIndex) => (
@@ -176,7 +179,7 @@ export function Projects() {
                       className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
                     >
                       <ExternalLink size={20} />
-                      <span>Ver Projeto</span>
+                      <span>{t('projects.viewProject')}</span>
                     </a>
                   )}
                 </div>

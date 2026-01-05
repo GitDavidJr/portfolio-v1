@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "education": "Educação",
+    "contact": "Contato"
+  },
+  "hero": {
+    "available": "Disponível para projetos",
+    "greeting": "Olá, eu sou",
+    "role": "Desenvolvedor Full Stack",
+    "description": "Especializado em <highlight>Java</highlight> e <highlight>Node.js</highlight>, criando soluções escaláveis e modernas. Experiência em DevOps, arquitetura de microserviços e desenvolvimento de aplicações web completas.",
+    "techStack": "Tech Stack:",
+    "viewProjects": "Ver Projetos",
+    "scroll": "Scroll",
+    "stats": {
+      "years": "Ano",
+      "projects": "Projetos",
+      "technologies": "Tecnologias"
+    }
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "paragraph1": "Sou um desenvolvedor full stack apaixonado por criar soluções inovadoras e escaláveis. Atualmente cursando o 7º semestre de Sistemas de Informação, combino conhecimento acadêmico com experiência prática no desenvolvimento de aplicações modernas.",
+    "paragraph2": "Minha expertise abrange desde o backend robusto com Java e Node.js até interfaces modernas com React e Next.js. Tenho forte experiência em DevOps, trabalhando com Docker, Kubernetes, AWS e pipelines de CI/CD.",
+    "paragraph3": "Busco constantemente aprender novas tecnologias e aplicar as melhores práticas de desenvolvimento para criar produtos que fazem a diferença.",
+    "highlights": {
+      "cleanCode": {
+        "title": "Código Limpo",
+        "description": "Escrevo código limpo, testável e bem documentado seguindo as melhores práticas da indústria."
+      },
+      "fastDelivery": {
+        "title": "Entrega Rápida",
+        "description": "Experiência em CI/CD e DevOps para garantir deploys confiáveis e automatizados."
+      },
+      "teamwork": {
+        "title": "Trabalho em Equipe",
+        "description": "Colaborativo e comunicativo, sempre buscando compartilhar conhecimento com o time."
+      }
+    }
+  },
+  "skills": {
+    "title": "Habilidades & Tecnologias",
+    "subtitle": "Um conjunto diversificado de tecnologias e ferramentas que utilizo para criar soluções completas",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "database": "Banco de Dados",
+      "devops": "DevOps & Cloud",
+      "tools": "Ferramentas",
+      "methodologies": "Metodologias"
+    }
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "subtitle": "Projetos reais que desenvolvi aplicando minhas habilidades técnicas",
+    "viewProject": "Ver Projeto",
+    "items": {
+      "pulsechat": {
+        "description": "CRM com chatbot e IA para WhatsApp. Inclui automação de mensagens, integração com IA, processamento de pagamentos e gestão de conversas em tempo real."
+      },
+      "progest": {
+        "description": "Sistema de gerenciamento de estoque para medicamentos e materiais hospitalares do Hospital de Base de Vitória da Conquista."
+      },
+      "efaDoar": {
+        "description": "Sistema de doação online para a Escola Família Agrícola de Botuporã. Integrado com gateway de pagamento Cielo."
+      },
+      "dashboard": {
+        "description": "Dashboard para visualização de dados internos financeiros de uma distribuidora. Integração com automações e design personalizado."
+      },
+      "landingPage": {
+        "description": "Modelo de landing page responsiva com implementação de envio de e-mail e design moderno."
+      },
+      "vitoriaBeatriz": {
+        "description": "Portfólio de arquitetura estilo blog para exibição de projetos. Permite que a arquiteta publique seus trabalhos e clientes explorem o catálogo."
+      }
+    }
+  },
+  "education": {
+    "title": "Educação & Certificações",
+    "academicTitle": "Formação Acadêmica",
+    "certificationsTitle": "Certificações",
+    "degree": "Bacharelado em Sistemas de Informação",
+    "institution": "Instituto Federal de Educação, Ciência e Tecnologia do Estado da Bahia",
+    "period": "2023 - 2026 (Previsão)",
+    "currentSemester": "7º Semestre",
+    "description": "Formação focada em desenvolvimento de software, arquitetura de sistemas, banco de dados e gestão de projetos de tecnologia."
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Estou sempre aberto a novas oportunidades e colaborações. Vamos conversar!",
+    "info": "Informações de Contato",
+    "location": "Localização",
+    "availability": "Disponibilidade",
+    "availabilityText": "Atualmente disponível para projetos freelance e oportunidades de trabalho full-time. Respondo normalmente em até 24 horas.",
+    "sendMessage": "Envie uma Mensagem",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Seu nome",
+      "email": "Email",
+      "emailPlaceholder": "seu.email@exemplo.com",
+      "message": "Mensagem",
+      "messagePlaceholder": "Sua mensagem...",
+      "submit": "Enviar Mensagem",
+      "sending": "Enviando..."
+    },
+    "status": {
+      "success": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+      "error": "Erro ao enviar mensagem. Tente novamente.",
+      "connectionError": "Erro de conexão. Verifique sua internet e tente novamente."
+    }
+  },
+  "footer": {
+    "madeWith": "Desenvolvido com",
+    "by": "por David Júnior",
+    "rights": "Todos os direitos reservados"
+  },
+  "typewriter": {
+    "name": "David Júnior",
+    "role": "Full Stack"
+  }
+}

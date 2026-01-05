@@ -1,7 +1,9 @@
 import { Mail, Linkedin, Github, MapPin, Loader2 } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export function Contact() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,13 +30,13 @@ export function Contact() {
       const data = await response.json();
 
       if (data.success) {
-        setStatus({ type: 'success', message: 'Mensagem enviada com sucesso! Entrarei em contato em breve.' });
+        setStatus({ type: 'success', message: t('contact.status.success') });
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus({ type: 'error', message: data.error || 'Erro ao enviar mensagem. Tente novamente.' });
+        setStatus({ type: 'error', message: data.error || t('contact.status.error') });
       }
     } catch (error) {
-      setStatus({ type: 'error', message: 'Erro de conexão. Verifique sua internet e tente novamente.' });
+      setStatus({ type: 'error', message: t('contact.status.connectionError') });
     } finally {
       setIsLoading(false);
     }
@@ -68,7 +70,7 @@ export function Contact() {
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      label: 'Localização',
+      label: t('contact.location'),
       value: 'Vitória da Conquista, BA, Brasil',
       link: null,
     },
@@ -78,17 +80,17 @@ export function Contact() {
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="mb-4 text-white">Entre em Contato</h2>
+          <h2 className="mb-4 text-white">{t('contact.title')}</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto mb-4"></div>
           <p className="text-slate-400 max-w-2xl mx-auto">
-            Estou sempre aberto a novas oportunidades e colaborações. Vamos conversar!
+            {t('contact.subtitle')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
-            <h3 className="mb-6 text-white">Informações de Contato</h3>
+            <h3 className="mb-6 text-white">{t('contact.info')}</h3>
             <div className="space-y-6 mb-8">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-center gap-4 group">
@@ -115,21 +117,20 @@ export function Contact() {
             </div>
 
             <div className="p-6 bg-blue-500/10 rounded-lg border border-blue-500/20">
-              <h4 className="mb-2 text-blue-400">Disponibilidade</h4>
+              <h4 className="mb-2 text-blue-400">{t('contact.availability')}</h4>
               <p className="text-slate-400">
-                Atualmente disponível para projetos freelance e oportunidades de trabalho full-time.
-                Respondo normalmente em até 24 horas.
+                {t('contact.availabilityText')}
               </p>
             </div>
           </div>
 
           {/* Contact Form */}
           <div>
-            <h3 className="mb-6 text-white">Envie uma Mensagem</h3>
+            <h3 className="mb-6 text-white">{t('contact.sendMessage')}</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-slate-300 mb-2">
-                  Nome
+                  {t('contact.form.name')}
                 </label>
                 <input
                   type="text"
@@ -139,13 +140,13 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder:text-slate-500"
-                  placeholder="Seu nome"
+                  placeholder={t('contact.form.namePlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-slate-300 mb-2">
-                  Email
+                  {t('contact.form.email')}
                 </label>
                 <input
                   type="email"
@@ -155,13 +156,13 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder:text-slate-500"
-                  placeholder="seu.email@exemplo.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-slate-300 mb-2">
-                  Mensagem
+                  {t('contact.form.message')}
                 </label>
                 <textarea
                   id="message"
@@ -171,7 +172,7 @@ export function Contact() {
                   required
                   rows={5}
                   className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none text-white placeholder:text-slate-500"
-                  placeholder="Sua mensagem..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                 />
               </div>
 
@@ -194,10 +195,10 @@ export function Contact() {
                 {isLoading ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    Enviando...
+                    {t('contact.form.sending')}
                   </>
                 ) : (
-                  'Enviar Mensagem'
+                  t('contact.form.submit')
                 )}
               </button>
             </form>

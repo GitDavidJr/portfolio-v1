@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, type JSX } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const skillSets = [
     ['Java', 'Node', '...'],
@@ -9,6 +10,7 @@ const skillSets = [
 ];
 
 export function TypewriterCode() {
+    const { t } = useTranslation();
     const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
     const [displayedText, setDisplayedText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
@@ -17,11 +19,11 @@ export function TypewriterCode() {
 
     const getCodeText = useCallback((skills: string[]) => {
         return `const developer = {
-  name: "David Júnior",
-  role: "Full Stack",
+  name: "${t('typewriter.name')}",
+  role: "${t('typewriter.role')}",
   skills: ["${skills[0]}", "${skills[1]}", ${skills[2]}]
 };`;
-    }, []);
+    }, [t]);
 
     // Blinking cursor effect
     useEffect(() => {

@@ -1,6 +1,8 @@
 import { Heart } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -8,10 +10,10 @@ export function Footer() {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col items-center justify-center gap-4">
           <p className="text-slate-400 text-center flex items-center gap-2">
-            Desenvolvido com <Heart className="w-4 h-4 text-red-500 fill-red-500" /> por David Júnior
+            {t('footer.madeWith')} <Heart className="w-4 h-4 text-red-500 fill-red-500" /> {t('footer.by')}
           </p>
           <p className="text-slate-600">
-            © {currentYear} Todos os direitos reservados
+            © {currentYear} {t('footer.rights')}
           </p>
         </div>
       </div>
