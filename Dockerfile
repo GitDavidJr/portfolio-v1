@@ -33,7 +33,7 @@ COPY --from=builder /app/dist ./dist
 COPY server ./server
 
 # Expose the port
-EXPOSE 3001
+EXPOSE 3000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \

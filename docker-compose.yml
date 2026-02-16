@@ -2,13 +2,13 @@ services:
   portfolio:
     image: ${IMAGE_NAME:-davidjrdocker/portfolio-app}:${TAG:-latest}
     container_name: portfolio-app
+    expose:
+      - "3000"
     restart: unless-stopped
     env_file:
       - .env
     environment:
       - NODE_ENV=production
-    ports:
-      - "3002:3001"
     networks:
       - rede-publica
     healthcheck:
